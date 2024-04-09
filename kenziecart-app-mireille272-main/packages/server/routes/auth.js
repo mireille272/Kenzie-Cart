@@ -1,7 +1,7 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
-import { User } from '../models'
-import keys from '../config/keys'
+import { User } from '../models/index.js'
+import {keys} from '../config/keys.js'
 import jwt from 'jsonwebtoken'
 
 const router = express.Router()
@@ -69,4 +69,4 @@ router.post('/signin', async (req, res) => {
     .send({ token, username, uid: user.id, profile_image: user.profile_image })
 })
 
-module.exports = router
+export default router

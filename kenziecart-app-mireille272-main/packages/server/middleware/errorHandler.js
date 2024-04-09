@@ -1,4 +1,4 @@
-module.exports = (error, req, res, next) => {
+export const errorHandler = (error, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = error.message
   res.locals.error = req.app.get('env') === 'development' ? error : {}

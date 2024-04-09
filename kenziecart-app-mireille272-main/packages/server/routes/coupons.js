@@ -1,5 +1,5 @@
 import { Router, query } from "express"
-import { Coupon } from "../models"
+import { Coupon } from "../models/index.js"
 
 const router = Router()
 
@@ -40,4 +40,4 @@ router.route("/verify").get(async (req, res) => {
   }
 })
 
-module.exports = router
+export default router

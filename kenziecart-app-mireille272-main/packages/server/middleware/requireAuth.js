@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
-import keys from '../config/keys'
-import { User } from '../models'
+import {keys} from '../config/keys.js'
+import { User } from '../models/index.js'
 
-module.exports = async (req, res, next) => {
+const requireAuth = async (req, res, next) => {
   const authorization = req.get('authorization')
   // authorization === Bearer ewefwegwrherhe
   if (!authorization) {
@@ -21,3 +21,5 @@ module.exports = async (req, res, next) => {
     })
   })
 }
+
+export default requireAuth

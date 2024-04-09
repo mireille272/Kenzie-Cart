@@ -1,5 +1,5 @@
 import express from 'express'
-import { Order } from '../models'
+import { Order } from '../models/index.js'
 
 const router = express.Router()
 
@@ -44,4 +44,4 @@ router
     next(new Error('not implemented'))
   })
 
-module.exports = router
+export default router

@@ -1,9 +1,10 @@
 import express from 'express'
 const router = express.Router()
 import jwt from 'jsonwebtoken'
-import keys from '../config/keys'
-import { User, Product } from '../models'
-import { requireAuth } from '../middleware'
+import {keys} from '../config/keys.js'
+import { User, Product } from '../models/index.js'
+// import { requireAuth } from '../middleware/index.js'
+import requireAuth from "../middleware/requireAuth.js"
 
 router.get('/', async (request, response) => {
   const products = await Product.find({}).sort({ created: -1 })
@@ -87,4 +88,4 @@ router.put('/comments', async (request, response) => {
     })
 })
 
-module.exports = router
+export default router

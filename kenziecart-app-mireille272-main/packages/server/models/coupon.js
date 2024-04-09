@@ -1,5 +1,8 @@
-import { Schema, model, ObjectId} from "mongoose"
+import mongoose from "mongoose" 
+// import { Mongoose, Schema, model} from "mongoose"
 
+// import { Schema } from "mongoose"
+const {Schema, ObjectId, model} = mongoose
 const CouponSchema = new Schema(
   {
     code: {

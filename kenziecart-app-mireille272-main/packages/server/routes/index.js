@@ -1,9 +1,9 @@
 import express from 'express'
-import authRouter from './auth'
-import userRouter from './users'
-import ordersRouter from './orders'
-import productRouter from './products'
-import couponRouter from './coupons'
+import authRouter from './auth.js'
+import userRouter from './users.js'
+import ordersRouter from './orders.js'
+import productRouter from './products.js'
+import couponRouter from './coupons.js'
 
 const router = express.Router()
 
@@ -17,4 +17,4 @@ router.use('/orders', ordersRouter)
 router.use('/products', productRouter)
 router.use('/Coupons', couponRouter)
 
-module.exports = router
+export default router

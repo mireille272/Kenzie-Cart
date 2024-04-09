@@ -1,6 +1,6 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
-import { User } from '../models'
+import { User } from '../models/index.js'
 
 const router = express.Router()
 
@@ -48,4 +48,4 @@ router
     }
   })
 
-module.exports = router
+export default router

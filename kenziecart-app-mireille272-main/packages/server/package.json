@@ -2,8 +2,9 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "nodemon --exec babel-node ./bin/www",
+    "start": "nodemon --exec babel-node app.js",
     "seed": "babel-node seedDatabase.js"
   },
   "dependencies": {

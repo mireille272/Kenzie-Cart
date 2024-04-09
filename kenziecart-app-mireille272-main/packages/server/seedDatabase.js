@@ -1,8 +1,10 @@
-import { connect, disconnect } from 'mongoose'
 import chalk from 'chalk'
-import User from './models/user'
-import Product from './models/product'
-import keys from './config/keys'
+import User from './models/user.js'
+import Product from './models/product.js'
+import {keys} from './config/keys.js'
+import  mongoose  from 'mongoose'
+
+const {connect, disconnect} = mongoose
 
 async function seedDatabase() {
   try {
@@ -101,4 +103,4 @@ async function seedDatabase() {
   }
 }
 
-module.exports = seedDatabase
+export default seedDatabase
