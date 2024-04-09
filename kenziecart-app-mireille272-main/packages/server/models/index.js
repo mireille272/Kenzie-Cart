@@ -1,4 +1,3 @@
-import { Form } from 'react-bootstrap'
 import Order from './order.js'
 
 export { default as User } from './user.js'
