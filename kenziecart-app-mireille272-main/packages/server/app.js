@@ -37,7 +37,9 @@ const app = express()
 
 // middleware
 app.use(logger('dev'))
+// app.use(cors())
 app.use(cors({origin: ["https://kenzie-cart-clien-t-updates.onrender.com", "http://localhost:5173"]}))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
