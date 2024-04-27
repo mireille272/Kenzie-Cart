@@ -1,5 +1,5 @@
 @import '_variables.scss';
-@import '_mixins.scss';
+@import '_mixins';
 
 // Override default variables before the import
 // $body-bg: #282c34;
@@ -18,4 +18,4 @@ $theme-colors: (
 );
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';

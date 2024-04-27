@@ -1,4 +1,4 @@
-@import 'custom.scss';
+@import "../../custom.scss";
 
 .drawer-backdrop {
   @include transition();
@@ -15,7 +15,7 @@
   right: -100%;
   background-color: $white;
   height: 100%;
-  width: 470px;
+  width: 470px !important;
   z-index: 1000;
   // -webkit-box-shadow: $box-shadow;
   // box-shadow: $box-shadow;
