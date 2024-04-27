@@ -3,18 +3,17 @@ import { Container } from 'react-bootstrap'
 import { ErrorBoundary, LoadingSpinner } from '../components'
 import { useAxios } from '../hooks'
 import ProductBox from '../components/ProductBox/index'
+import { useParams } from 'react-router-dom'
 
-export default function ProductDetailPage({
-  match: {
-    params: { pid },
-  },
-}) {
+function ProductDetailPage() {
+  const { pid } = useParams();
+
   const { data, loading, error } = useAxios({
     config: { url: `products/${pid}` },
-  })
+  });
 
   return (
-    <Container className='h-100'>
+    <Container className="h-100">
       <ErrorBoundary>
         {error ? (
           <p>Error...</p>
@@ -22,15 +21,51 @@ export default function ProductDetailPage({
           (() => {
             switch (loading) {
               case false:
-                return <ProductBox product={data} />
+                return <ProductBox product={data} />;
               case true:
-                return <LoadingSpinner full />
+                return <LoadingSpinner full />;
               default:
-                return null
+                return null;
             }
           })()
         )}
       </ErrorBoundary>
     </Container>
-  )
+  );
 }
+
+export default ProductDetailPage;
+
+
+
+
+
+
+// export default function ProductDetailPage({
+ 
+// }) {
+//   const { data, loading, error } = useAxios({
+//     config: { url: `products/${pid}` },
+//   })
+
+//   return (
+//     <Container className='h-100'>
+//       <ErrorBoundary>
+//         {error ? (
+//           <p>Error...</p>
+//         ) : (
+//           (() => {
+//             switch (loading) {
+//               case false:
+//                 return <ProductBox product={data} />
+//               case true:
+//                 return <LoadingSpinner full />
+//               default:
+//                 return null
+//             }
+//           })()
+//         )}
+//       </ErrorBoundary>
+//     </Container>
+//   )
+// }
